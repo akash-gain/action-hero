@@ -10,17 +10,22 @@ on:
   workflow_dispatch:
 
 
-job:
+
+jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-      -uses: actions/checkout@v2
-      -name: hello world
-        run: echo "Hello world form my side"
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: hello world
+        run: echo "Hello world from my side"
         shell: bash
+
   goodbye:
-    runs-on: goodbye world
+    runs-on: ubuntu-latest
     steps:
-      -name: goodbye world
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: goodbye world
         run: echo "Goodbye world from my side"
         shell: bash
